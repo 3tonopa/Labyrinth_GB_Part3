@@ -129,4 +129,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 0}
   _transform: {fileID: 0}
+  _ground: 0
   Speed: 5
