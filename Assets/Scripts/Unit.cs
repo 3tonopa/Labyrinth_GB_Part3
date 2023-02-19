@@ -31,7 +31,6 @@ namespace Labyrinth
         {
             if (_rigidbody)
             {
-
                 if (Input.GetMouseButton(0))
                 {
                     RaycastHit hit;
@@ -50,10 +49,6 @@ namespace Labyrinth
                 _rigidbody.AddForce(movement * Speed);
             }
             else Debug.Log("No Rigidbody");
-        }
-        protected void EndGame()
-        {
-            FindObjectOfType<GameManager>().endGame();
         }
     }
 }

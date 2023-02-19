@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Labyrinth
 {
-    public class GoodBonus : Bonus, IFly, IFlicker
+    public class GoodBonus : Bonus, IFly, IFlicker, IRotation
     {
-       [SerializeField] private Material _material;
-        float heightFly = 6f;
+        [SerializeField] private Material _material;
+
 
         private void Awake()
         {
             _material = GetComponent<Renderer>().material;
+            speedRotation = Random.Range(13f, 40f);
+            heightFly = 4f;
         }
         protected override void Interaction()
         {
@@ -25,6 +27,11 @@ namespace Labyrinth
         public void Flick()
         {
             _material.color = new Color(_material.color.r, _material.color.g, _material.color.b, Mathf.PingPong(Time.time, 1.0f));
+        }
+
+        public void Rotate()
+        {
+            transform.Rotate(Vector3.left * (Time.deltaTime * speedRotation), Space.World);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Labyrinth
 {
     public class InteractiveObjectController : MonoBehaviour
     {
-        private Bonus[] _interactiveObject;
+        public Bonus[] _interactiveObject;
 
         private void Awake()
         {
@@ -38,6 +38,10 @@ namespace Labyrinth
                 if (_interactiveObject[i] is IFlicker flick)
                 {
                     flick.Flick();
+                }
+                if (_interactiveObject[i] is IText text)
+                {
+                    text.Text();
                 }
 
             }

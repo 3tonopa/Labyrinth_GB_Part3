@@ -5,20 +5,23 @@ using UnityEngine.UI;
 
 namespace Labyrinth
 {
-    public sealed class Exit : Bonus
+    public sealed class Exit : Bonus, IRotation
     {
-        [SerializeField] private Material _material;
+        public delegate void WonTheGameChange();
+        public WonTheGameChange wonTheGame;
 
         private void Awake()
         {
-            _audioClip = GetComponent<AudioSource>();
-            _image = GameObject.Find("Canvas/YouWin").GetComponentInChildren<Image>();
-            _material = GetComponent<Renderer>().material;
+            speedRotation = Random.Range(13f, 40f);
         }
+        public void Rotate()
+        {
+            transform.Rotate(Vector3.up*(Time.deltaTime*speedRotation), Space.World);
+        }
+
         protected override void Interaction()
         {   
-            _audioClip.Play();
-            _image.enabled = !_image.enabled;
+            wonTheGame();
         }
     }
 }

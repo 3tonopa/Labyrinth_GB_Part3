@@ -18,15 +18,9 @@ namespace Labyrinth
             _ground = _transform.position.y;
         }
         private void Update()
-        {  // Debug.Log(_hp);
+        {  
             Move();
             if (grounded()) Jump();
-            if (_hp <= 0)
-            {
-                EndGame();
-                Destroy(gameObject);
-            }
-
         }
         private void Jump()
         {

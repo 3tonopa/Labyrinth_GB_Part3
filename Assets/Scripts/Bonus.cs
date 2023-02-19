@@ -8,6 +8,10 @@ namespace Labyrinth
     {
         public Player _player;
         public GameManager _gameManager;
+        public TextMesh ui;
+        public  float heightFly;
+        public float speedRotation;
+        public int _damage;
         public bool IsInteractible { get; } = true;
         public AudioSource _audioClip;
         public Image _image;
@@ -18,7 +22,7 @@ namespace Labyrinth
         {
             _player = FindObjectOfType<Player>();
             _gameManager = FindObjectOfType<GameManager>();
-            _propertyModifier = Random.Range(1,5);
+            ui = GetComponentInChildren<TextMesh>();
         }
 
         private void OnTriggerEnter(Collider other)
