@@ -4,33 +4,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 namespace Labyrinth
 {
     public class GameManager : MonoBehaviour, IDisposable
     {
+        //GameObjects
         private GameObject _player;
-        private Canvas _canvas;
+        private GameObject _onScr;
+        //Lists
         private Bonus[] _interactiveObject;
+        //Sprites
         public Sprite _winImage;
         public Sprite _looseImage;
-        private AudioClip _looseSnd;
-        private AudioClip _winSnd;
-
-        public DisplayEndGame _displayEndGame;
+        //AudioClips
+        public AudioClip _looseSnd;
+        public AudioClip _winSnd;
+        //Integers
+        private bool pause;
+        
         private void Awake()
         {
-            GameManager[] _objs = GameObject.FindObjectsOfType<GameManager>();
-            if (_objs.Length > 1) Destroy(this.gameObject);
-            DontDestroyOnLoad(this.gameObject);
+            // GameManager[] _objs = GameObject.FindObjectsOfType<GameManager>();
+            // if (_objs.Length > 1) Destroy(this.gameObject);
+            // DontDestroyOnLoad(this.gameObject);
             _player = GameObject.FindGameObjectWithTag("Player");
-            _canvas = FindObjectOfType<Canvas>();
+            _onScr = GameObject.Find("Canvas/OnScreen");
+           
             _winImage = Resources.Load<Sprite>("_youWin");
             _looseImage = Resources.Load<Sprite>("_youLoose");
             _looseSnd = Resources.Load<AudioClip>("_looseSnd");
             _winSnd = Resources.Load<AudioClip>("_winSnd");
 
-            _displayEndGame = new DisplayEndGame(_canvas, _winImage, _looseImage, _looseSnd, _winSnd);
+            DisplayEndGame _displayEndGame = new DisplayEndGame(_onScr, _winImage, _looseImage, _looseSnd, _winSnd);
+
             _interactiveObject = FindObjectsOfType<Bonus>();
             foreach (var o in _interactiveObject)
             {
@@ -45,6 +53,12 @@ namespace Labyrinth
                     exit.wonTheGame += _displayEndGame.YouWin;
                 }
             }
+
+            Buttons restart = new Buttons("Restart");
+            restart.gObj.GetComponent<Button>().onClick.AddListener(Restart);
+            Buttons pause = new Buttons("Pause");
+            pause.gObj.GetComponent<Button>().onClick.AddListener(Pause);
+
         }
 
         void Update()
@@ -83,10 +97,22 @@ namespace Labyrinth
 
         public void endGame()
         {
-            print("GAME OVER");
+            Debug.Log("Game Ended");
             Destroy(_player);
+            Invoke("Restart", 3.0f);
         }
-
+        void Restart()
+        {
+            Debug.Log("RESTART");
+            Time.timeScale = 1;
+            SceneManager.LoadScene("Scenes/Game", LoadSceneMode.Single);
+        }
+        void Pause()
+        {
+            pause = !pause;
+            if (pause) Time.timeScale = 0;
+            else Time.timeScale = 1;
+        }
         public void Dispose()
         {
 

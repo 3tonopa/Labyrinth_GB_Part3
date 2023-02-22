@@ -4,37 +4,46 @@ using UnityEngine;
 using UnityEngine.UI;
 namespace Labyrinth
 {
-    public sealed class DisplayEndGame
+    public sealed class DisplayEndGame  
     {
-        private AudioSource _audio;
+        private GameObject _onScr;
         private AudioClip _looseSnd;
         private AudioClip _winSnd;
-        private Image _image;
+        private Image _oSimage;
         private Sprite _winImage;
         private Sprite _looseImage;
+        private AudioSource _oSaudio;
 
-        public DisplayEndGame(Canvas canv, Sprite _win, Sprite _loose, AudioClip _looseS, AudioClip _winS)
+        
+        public DisplayEndGame(GameObject _onScr, Sprite _win, Sprite _loose, AudioClip _looseS, AudioClip _winS)
         {
-            _audio = canv.GetComponent<AudioSource>();
-            _image = canv.GetComponentInChildren<Image>();
+            _oSaudio = _onScr.GetComponent<AudioSource>();
+            _oSimage = _onScr.GetComponent<Image>();
+
             _looseImage = _loose;
             _winImage = _win;
+
             _looseSnd = _looseS;
             _winSnd = _winS;
         }
         public void GameOver()
         {
-            _image.enabled = !_image.enabled;
-            _image.sprite = _looseImage;
-            _audio.clip = _looseSnd;
-            _audio.Play();
+            _oSimage.enabled = !_oSimage.enabled;
+            _oSimage.sprite = _looseImage;
+            _oSaudio.clip = _looseSnd;
+            _oSaudio.Play();
         }
         public void YouWin()
         {
-            _image.enabled = !_image.enabled;
-            _image.sprite = _winImage;
-            _audio.clip = _winSnd;
-            _audio.Play();
+            _oSimage.enabled = !_oSimage.enabled;
+            _oSimage.sprite = _winImage;
+            _oSaudio.clip = _winSnd;
+            _oSaudio.Play();
+        }
+        private void CommonActions()
+        {
+            
+            
         }
     }
 }

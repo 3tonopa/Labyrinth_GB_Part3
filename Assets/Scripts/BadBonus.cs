@@ -14,9 +14,9 @@ namespace Labyrinth
         {
             heightFly = Random.Range(2f, 6f);
             speedRotation = Random.Range(13f, 40f);
-            _propertyModifier = Random.Range(1,6);
+            _propertyModifier = Random.Range(1,5);
             _damage = Random.Range(5,20);
-            if (_propertyModifier == 5) _damage = 100;
+            if (_propertyModifier == 4) _damage = 100;
         }
         public void Fly()
         {
