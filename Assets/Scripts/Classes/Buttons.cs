@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 namespace Labyrinth
 {
-
     public sealed class Buttons
     {
         public GameObject gObj;

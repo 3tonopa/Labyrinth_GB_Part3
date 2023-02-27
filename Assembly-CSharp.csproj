@@ -36,8 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\DisplayEndGame.cs" />
+     <Compile Include="Assets\Scripts\Classes\DisplayEndGame.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IText.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IExecute.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Exit.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IRotation.cs" />
@@ -47,14 +48,16 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\BadBonus.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Classes\ListExecuteObject.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDisposable.cs" />
      <Compile Include="Assets\Scripts\Unit.cs" />
      <Compile Include="Assets\Scripts\InteractiveObjectController.cs" />
      <Compile Include="Assets\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Scripts\VirtCamera.cs" />
+     <Compile Include="Assets\Scripts\Classes\Buttons.cs" />
      <Compile Include="Assets\Scripts\GoodBonus.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IInteractible.cs" />
-     <Compile Include="Assets\Scripts\Buttons.cs" />
+     <Compile Include="Assets\Scripts\Classes\InteractiveObject.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

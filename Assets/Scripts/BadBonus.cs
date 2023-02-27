@@ -25,11 +25,18 @@ namespace Labyrinth
         public void Rotate()
         {
             transform.Rotate(Vector3.up*(Time.deltaTime*speedRotation), Space.World);
-            
         }
         public void Text()
         {
+            try
+            {
             ui.text = $"Damage: {_damage} \n PM: {_propertyModifier}";
+            }
+            catch (MissingReferenceException)
+            {
+                return;
+            }
+
         }
         protected override void Interaction()
         {
@@ -37,8 +44,6 @@ namespace Labyrinth
             _player._hp -= _damage; //+++
             if(_player._hp <= 0) CaughtPlayer();
             _gameManager.badAction(_propertyModifier); //+++
-            
-            
         }
     }
 }

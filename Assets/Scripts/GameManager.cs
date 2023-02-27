@@ -15,6 +15,7 @@ namespace Labyrinth
         private GameObject _onScr;
         //Lists
         private Bonus[] _interactiveObject;
+        private ListExecuteObject _executiveObject;
         //Sprites
         public Sprite _winImage;
         public Sprite _looseImage;
@@ -23,7 +24,7 @@ namespace Labyrinth
         public AudioClip _winSnd;
         //Integers
         private bool pause;
-        
+
         private void Awake()
         {
             // GameManager[] _objs = GameObject.FindObjectsOfType<GameManager>();
@@ -31,14 +32,14 @@ namespace Labyrinth
             // DontDestroyOnLoad(this.gameObject);
             _player = GameObject.FindGameObjectWithTag("Player");
             _onScr = GameObject.Find("Canvas/OnScreen");
-           
+
             _winImage = Resources.Load<Sprite>("_youWin");
             _looseImage = Resources.Load<Sprite>("_youLoose");
             _looseSnd = Resources.Load<AudioClip>("_looseSnd");
             _winSnd = Resources.Load<AudioClip>("_winSnd");
 
             DisplayEndGame _displayEndGame = new DisplayEndGame(_onScr, _winImage, _looseImage, _looseSnd, _winSnd);
-
+            _executiveObject = new ListExecuteObject();
             _interactiveObject = FindObjectsOfType<Bonus>();
             foreach (var o in _interactiveObject)
             {
@@ -61,9 +62,19 @@ namespace Labyrinth
 
         }
 
+
+
         void Update()
         {
-
+            for (var i = 0; i < _executiveObject.Length; i++)
+            {
+                var executiveObject = _executiveObject[i];
+                if (executiveObject == null)
+                {
+                    continue;
+                }
+                executiveObject.Execute();
+            }
         }
         public void badAction(int mod)
         {

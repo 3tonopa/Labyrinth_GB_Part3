@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace Labyrinth
 {
+    public class CameraController : InteractiveObject, IExecute
    
-    public class CameraController : MonoBehaviour
     {
         [SerializeField]private Player _player;
         private Vector3 _offset;
@@ -20,9 +20,12 @@ namespace Labyrinth
            camTransform = transform;
            
         }
+        protected override void Interaction()
+        {
+            throw new System.NotImplementedException();
+        }
 
-
-        void Update()
+        public override void Execute()
         {
             if(_player != null)
             {

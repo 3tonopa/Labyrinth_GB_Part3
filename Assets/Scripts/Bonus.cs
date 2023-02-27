@@ -40,6 +40,7 @@ namespace Labyrinth
         {
             GetComponent<MeshRenderer>().enabled = !GetComponent<MeshRenderer>().enabled;
             GetComponent<Collider>().enabled = !GetComponent<Collider>().enabled;
+            Destroy(ui);
         }
     }
 }
