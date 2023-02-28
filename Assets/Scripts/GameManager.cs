@@ -26,18 +26,13 @@ namespace Labyrinth
         private bool pause;
         //Classes
         public ScoreInd score;
-
         public Healthbar hBar;
-
+        public ScreenMap map;
         //Fonts
-
         public Font scoreFont;
 
         private void Awake()
         {
-            // GameManager[] _objs = GameObject.FindObjectsOfType<GameManager>();
-            // if (_objs.Length > 1) Destroy(this.gameObject);
-            // DontDestroyOnLoad(this.gameObject);
             _player = GameObject.FindGameObjectWithTag("Player");
             _onScr = GameObject.Find("Canvas/OnScreen");
 
@@ -62,17 +57,14 @@ namespace Labyrinth
                     exit.wonTheGame += _displayEndGame.YouWin;
                 }
             }
-
             score = new ScoreInd(scoreFont);
             Buttons restart = new Buttons("Restart");
             restart.gObj.GetComponent<Button>().onClick.AddListener(Restart);
             Buttons pause = new Buttons("Pause");
             pause.gObj.GetComponent<Button>().onClick.AddListener(Pause);
             hBar = new Healthbar();
-
+            map = new ScreenMap();
         }
-
-
 
         void Update()
         {
@@ -95,25 +87,33 @@ namespace Labyrinth
 
             if (mod == 1)
             {
-                Debug.Log("offLight");
                 float time = Random.Range(3.0f, 10.0f);
+                Debug.Log($"LIGHT OFF for {time} sec");
                 StartCoroutine(OffLight(time));
             }
             else if (mod == 2)
             {
-                Debug.Log("lowSpeed");
                 float speed = Random.Range(0.1f, 2.0f);
                 float time = Random.Range(5.0f, 15.0f);
+                Debug.Log($"SPEED LOWERED for {time} sec");
                 StartCoroutine(PlayerSpeed(speed, time));
             }
             else if (mod == 3)
             {
-                Debug.Log("cameraShake");
                 float time = Random.Range(1, 3);
+                Debug.Log($"CAMERA SHAKE for {time} sec");
                 CameraShake _shake = FindObjectOfType<CameraShake>();
                 _shake.enabled = !_shake.enabled;
                 _shake.shakeDuration = time;
             }
+        }
+
+        public void ShowMap(float m)
+                 
+        {
+            float time = Random.Range(10,61);
+            Debug.Log($"SHOW MAP for {time} sec");
+            StartCoroutine(MapLife(time, m));
         }
 
         public void endGame()
@@ -130,6 +130,7 @@ namespace Labyrinth
         }
         void Pause()
         {
+            Debug.Log("PAUSE");
             pause = !pause;
             if (pause) Time.timeScale = 0;
             else Time.timeScale = 1;
@@ -160,6 +161,13 @@ namespace Labyrinth
             yield return new WaitForSeconds(time);
             FindObjectOfType<Player>().Speed = 5;
         }
+        public IEnumerator MapLife(float time, float m)
+        {
+            map.ShowMap(true, m);
+            yield return new WaitForSeconds(time);
+            map.ShowMap(false, m);
+        }
+        
     }
 
 }

@@ -26,10 +26,7 @@ namespace Labyrinth
             _text.fontSize = 72;
             _text.resizeTextForBestFit = true;
             _text.alignment = TextAnchor.MiddleCenter;
-            
-
             return;
-            
         }
     }
 }

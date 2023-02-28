@@ -11,6 +11,7 @@ namespace Labyrinth
         public Transform _transform;
         public Text _scoreInd;
         public Healthbar _hbInd;
+        public ScreenMap _map;
         [SerializeField] public float _ground;
         public float Speed = 5;
         public int _hp;

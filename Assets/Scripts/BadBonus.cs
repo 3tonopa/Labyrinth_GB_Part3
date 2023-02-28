@@ -41,9 +41,9 @@ namespace Labyrinth
         protected override void Interaction()
         {
             Debug.Log($"HP - {_damage}");
-            _player._hp -= _damage; //+++
+            _player._hp -= _damage; 
             if(_player._hp <= 0) CaughtPlayer();
-            _gameManager.badAction(_propertyModifier); //+++
+            _gameManager.badAction(_propertyModifier);
         }
     }
 }
