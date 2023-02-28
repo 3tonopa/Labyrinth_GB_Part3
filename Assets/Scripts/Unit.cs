@@ -10,6 +10,7 @@ namespace Labyrinth
         [SerializeField] public Rigidbody _rigidbody;
         public Transform _transform;
         public Text _scoreInd;
+        public Healthbar _hbInd;
         [SerializeField] public float _ground;
         public float Speed = 5;
         public int _hp;
@@ -17,6 +18,8 @@ namespace Labyrinth
         private float horizontal;
         private float vertical;
         private Vector3 movement;
+
+        public GameManager _gm;
         protected Vector3 Normalize(Vector3 mov)
         {
             float x = Mathf.Lerp(0, 1, mov.x);

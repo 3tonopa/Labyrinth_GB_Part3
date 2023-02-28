@@ -11,7 +11,9 @@ namespace Labyrinth
         {
             _hp = 100;
             _transform = GetComponent<Transform>();
-            _scoreInd = FindObjectOfType<GameManager>().score._text;
+            _gm = FindObjectOfType<GameManager>();
+            _scoreInd = _gm.score._text;
+            _hbInd = _gm.hBar;
             _score = 0;
             if (GetComponent<Rigidbody>())
             {
@@ -22,6 +24,7 @@ namespace Labyrinth
         private void Update()
         {   if(_score != 0) _scoreInd.text = $"{_score}";
             else _scoreInd.text = "";
+            _hbInd.SetValue(_hp);
             Move();
             if (grounded()) Jump();
         }

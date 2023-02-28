@@ -27,6 +27,8 @@ namespace Labyrinth
         //Classes
         public ScoreInd score;
 
+        public Healthbar hBar;
+
         //Fonts
 
         public Font scoreFont;
@@ -66,6 +68,7 @@ namespace Labyrinth
             restart.gObj.GetComponent<Button>().onClick.AddListener(Restart);
             Buttons pause = new Buttons("Pause");
             pause.gObj.GetComponent<Button>().onClick.AddListener(Pause);
+            hBar = new Healthbar();
 
         }
 
