@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Labyrinth
 {
@@ -8,9 +9,11 @@ namespace Labyrinth
     {
         [SerializeField] public Rigidbody _rigidbody;
         public Transform _transform;
+        public Text _scoreInd;
         [SerializeField] public float _ground;
         public float Speed = 5;
         public int _hp;
+        public int _score;
         private float horizontal;
         private float vertical;
         private Vector3 movement;

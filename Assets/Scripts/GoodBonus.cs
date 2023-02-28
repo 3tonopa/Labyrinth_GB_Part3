@@ -12,11 +12,14 @@ namespace Labyrinth
         {
             _material = GetComponent<Renderer>().material;
             speedRotation = Random.Range(13f, 40f);
+            _points = Random.Range(5,20);
             heightFly = 4f;
+
         }
         protected override void Interaction()
         {
-            Debug.Log("No iteraction");
+             Debug.Log($"SCORE + {_points}");
+            _player._score += _points; //+++
         }
 
         public void Fly()

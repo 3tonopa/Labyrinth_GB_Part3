@@ -11,6 +11,8 @@ namespace Labyrinth
         {
             _hp = 100;
             _transform = GetComponent<Transform>();
+            _scoreInd = FindObjectOfType<GameManager>().score._text;
+            _score = 0;
             if (GetComponent<Rigidbody>())
             {
                 _rigidbody = GetComponent<Rigidbody>();
@@ -18,7 +20,8 @@ namespace Labyrinth
             _ground = _transform.position.y;
         }
         private void Update()
-        {  
+        {   if(_score != 0) _scoreInd.text = $"{_score}";
+            else _scoreInd.text = "";
             Move();
             if (grounded()) Jump();
         }

@@ -12,6 +12,7 @@ namespace Labyrinth
         public  float heightFly;
         public float speedRotation;
         public int _damage;
+        public int _points;
         public bool IsInteractible { get; } = true;
         public AudioSource _audioClip;
         public Image _image;

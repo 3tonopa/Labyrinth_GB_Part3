@@ -2206,6 +2206,7 @@ MonoBehaviour:
   _looseImage: {fileID: 0}
   _looseSnd: {fileID: 0}
   _winSnd: {fileID: 0}
+  scoreFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1923107268
 MonoBehaviour:
   m_ObjectHideFlags: 0

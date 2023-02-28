@@ -24,6 +24,12 @@ namespace Labyrinth
         public AudioClip _winSnd;
         //Integers
         private bool pause;
+        //Classes
+        public ScoreInd score;
+
+        //Fonts
+
+        public Font scoreFont;
 
         private void Awake()
         {
@@ -55,6 +61,7 @@ namespace Labyrinth
                 }
             }
 
+            score = new ScoreInd(scoreFont);
             Buttons restart = new Buttons("Restart");
             restart.gObj.GetComponent<Button>().onClick.AddListener(Restart);
             Buttons pause = new Buttons("Pause");
