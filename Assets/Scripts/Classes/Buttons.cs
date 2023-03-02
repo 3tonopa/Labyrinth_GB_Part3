@@ -32,6 +32,16 @@ namespace Labyrinth
                 _bTransform.localPosition = new Vector2(840, 420);
                 _bTransform.sizeDelta = new Vector2(150, 50);
             }
+             if (type == "Save")
+            {
+                _bTransform.localPosition = new Vector2(840, 200);
+                _bTransform.sizeDelta = new Vector2(150, 40);
+            }
+             if (type == "Load")
+            {
+                _bTransform.localPosition = new Vector2(840, 120);
+                _bTransform.sizeDelta = new Vector2(150, 40);
+            }
             return;
         }
     }

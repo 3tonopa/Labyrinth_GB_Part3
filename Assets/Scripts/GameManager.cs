@@ -13,6 +13,7 @@ namespace Labyrinth
         //GameObjects
         private GameObject _player;
         private GameObject _onScr;
+        private GameObjects _go;
         //Lists
         private Bonus[] _interactiveObject;
         private ListExecuteObject _executiveObject;
@@ -33,6 +34,7 @@ namespace Labyrinth
 
         private void Awake()
         {
+            _go = FindObjectOfType<GameObjects>();
             _player = GameObject.FindGameObjectWithTag("Player");
             _onScr = GameObject.Find("Canvas/OnScreen");
 
@@ -62,6 +64,12 @@ namespace Labyrinth
             restart.gObj.GetComponent<Button>().onClick.AddListener(Restart);
             Buttons pause = new Buttons("Pause");
             pause.gObj.GetComponent<Button>().onClick.AddListener(Pause);
+            Buttons save = new Buttons("Save");
+            save.gObj.GetComponent<Button>().onClick.AddListener(Save);
+            Buttons load = new Buttons("Load");
+            load.gObj.GetComponent<Button>().onClick.AddListener(Load);
+
+
             hBar = new Healthbar();
             map = new ScreenMap();
         }
@@ -135,6 +143,15 @@ namespace Labyrinth
             if (pause) Time.timeScale = 0;
             else Time.timeScale = 1;
         }
+        void Save()
+        {
+            _go.SaveFile();
+        }
+        void Load()
+        {
+            _go.LoadFile();
+        }
+
         public void Dispose()
         {
 

@@ -10,8 +10,7 @@ namespace Labyrinth
 
         private void Awake()
         {
-            _interactiveObject = FindObjectsOfType<Bonus>();
-            //print("length is: " + _interactiveObject.Length);
+            Reload();
         }
 
        
@@ -45,6 +44,11 @@ namespace Labyrinth
                 }
 
             }
+        }
+        public void Reload()
+        {
+         _interactiveObject = FindObjectsOfType<Bonus>();
+         print("length is: " + _interactiveObject.Length);
         }
     }
 }

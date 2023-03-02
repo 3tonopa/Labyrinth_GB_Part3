@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5823075118073290144}
   m_Layer: 0
   m_Name: BadBonus
-  m_TagString: Untagged
+  m_TagString: Bad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,10 +119,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
   _gameManager: {fileID: 0}
-  ui: {fileID: 0}
+  ui: {fileID: 6100388823391900718}
   heightFly: 0
   speedRotation: 0
   _damage: 0
+  _points: 0
   _audioClip: {fileID: 0}
   _image: {fileID: 0}
   _propertyModifier: 0

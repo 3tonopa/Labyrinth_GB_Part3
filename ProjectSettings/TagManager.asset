@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Restart
   - Pause
-  - mapBadBonus
+  - Bad
+  - Good
+  - Exit
+  - Save
+  - Load
   layers:
   - Default
   - TransparentFX

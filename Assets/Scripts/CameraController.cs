@@ -27,10 +27,12 @@ namespace Labyrinth
 
         public override void Execute()
         {
+
             if(_player != null)
             {
             camTransform.LookAt(_player.transform);
             }
+            else _player = FindObjectOfType<Player>();
             // if (_player.GetComponent<Rigidbody>().velocity != Vector3.zero)
             // {
             //     Quaternion target;

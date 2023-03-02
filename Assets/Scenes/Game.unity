@@ -2271,6 +2271,7 @@ GameObject:
   - component: {fileID: 1923107269}
   - component: {fileID: 1923107268}
   - component: {fileID: 1923107267}
+  - component: {fileID: 1923107270}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2290,7 +2291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5005e57d8cdc44bb4330e2e8c46d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _badBonus: []
   _winImage: {fileID: 0}
   _looseImage: {fileID: 0}
   _looseSnd: {fileID: 0}
@@ -2324,6 +2324,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1923107270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923107266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d892a924e69964582a1b1fbb64c310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goodPrefab: {fileID: 0}
+  gObjStoreGood: []
+  badPrefab: {fileID: 0}
+  gObjStoreBad: []
+  _exit: {fileID: 0}
+  exitPrefab: {fileID: 0}
 --- !u!1001 &1992551271
 PrefabInstance:
   m_ObjectHideFlags: 0

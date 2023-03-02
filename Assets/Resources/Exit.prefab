@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1488219379911605435}
   m_Layer: 0
   m_Name: Exit
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,9 +111,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab5dacf96df1a145a4c200802003dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _gameManager: {fileID: 0}
+  ui: {fileID: 0}
+  heightFly: 0
+  speedRotation: 0
+  _damage: 0
+  _points: 0
+  _audioClip: {fileID: 0}
   _image: {fileID: 0}
-  _boxCollider: {fileID: 0}
-  _material: {fileID: 0}
+  _propertyModifier: 0
 --- !u!82 &1488219379911605435
 AudioSource:
   m_ObjectHideFlags: 0
