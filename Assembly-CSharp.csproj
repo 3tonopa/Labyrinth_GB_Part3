@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Classes\GameData.cs" />
      <Compile Include="Assets\Scripts\Classes\DisplayEndGame.cs" />
      <Compile Include="Assets\Scripts\GameObjects.cs" />
      <Compile Include="Assets\Scripts\Classes\ScreenMap.cs" />
@@ -56,6 +57,7 @@
      <Compile Include="Assets\Scripts\Interfaces\IDisposable.cs" />
      <Compile Include="Assets\Scripts\Classes\Healthbar.cs" />
      <Compile Include="Assets\Scripts\Unit.cs" />
+     <Compile Include="Assets\Scripts\Linq\ExampleLinq.cs" />
      <Compile Include="Assets\Scripts\InteractiveObjectController.cs" />
      <Compile Include="Assets\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Scripts\VirtCamera.cs" />
@@ -63,7 +65,6 @@
      <Compile Include="Assets\Scripts\GoodBonus.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IInteractible.cs" />
      <Compile Include="Assets\Scripts\Classes\ExecuteObject.cs" />
-     <Compile Include="Assets\Scripts\Classes\GameData.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
