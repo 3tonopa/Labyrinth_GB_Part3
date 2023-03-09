@@ -11,6 +11,7 @@ TagManager:
   - Exit
   - Save
   - Load
+  - Quit
   layers:
   - Default
   - TransparentFX

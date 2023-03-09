@@ -28,14 +28,14 @@ namespace Labyrinth
         }
         public void Text()
         {
-            try
-            {
-            ui.text = $"Damage: {_damage} \n PM: {_propertyModifier}";
-            }
-            catch (MissingReferenceException)
-            {
-                return;
-            }
+            // try
+            // {
+            // ui.text = $"Damage: {_damage} \n PM: {_propertyModifier}";
+            // }
+            // catch (MissingReferenceException)
+            // {
+            //     return;
+            // }
 
         }
         protected override void Interaction()

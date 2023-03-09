@@ -8,7 +8,7 @@ namespace Labyrinth
     {
         public Player _player;
         public GameManager _gameManager;
-        public TextMesh ui;
+        //public TextMesh ui;
         public  float heightFly;
         public float speedRotation;
         public int _damage;
@@ -23,7 +23,7 @@ namespace Labyrinth
         {
             _player = FindObjectOfType<Player>();
             _gameManager = FindObjectOfType<GameManager>();
-            ui = GetComponentInChildren<TextMesh>();
+            //ui = GetComponentInChildren<TextMesh>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -41,7 +41,7 @@ namespace Labyrinth
         {
             GetComponent<MeshRenderer>().enabled = !GetComponent<MeshRenderer>().enabled;
             GetComponent<Collider>().enabled = !GetComponent<Collider>().enabled;
-            Destroy(ui);
+            //Destroy(ui);
         }
     }
 }

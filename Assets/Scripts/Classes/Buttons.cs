@@ -21,25 +21,31 @@ namespace Labyrinth
             Button _bButton = gObj.AddComponent(typeof(Button)) as Button;
             gObj.tag = type;
 
+            if (type == "Quit")
+            {
+                _bTransform.localPosition = new Vector2(920, 500);
+                _bTransform.sizeDelta = new Vector2(50, 50);
+            }
+
             if (type == "Restart")
             {
-                _bTransform.localPosition = new Vector2(840, 500);
+                _bTransform.localPosition = new Vector2(800, 500);
                 _bTransform.sizeDelta = new Vector2(150, 50);
             }
 
             if (type == "Pause")
             {
-                _bTransform.localPosition = new Vector2(840, 420);
+                _bTransform.localPosition = new Vector2(650, 500);
                 _bTransform.sizeDelta = new Vector2(150, 50);
             }
              if (type == "Save")
             {
-                _bTransform.localPosition = new Vector2(840, 200);
+                _bTransform.localPosition = new Vector2(840, 260);
                 _bTransform.sizeDelta = new Vector2(150, 40);
             }
              if (type == "Load")
             {
-                _bTransform.localPosition = new Vector2(840, 120);
+                _bTransform.localPosition = new Vector2(840, 180);
                 _bTransform.sizeDelta = new Vector2(150, 40);
             }
             return;

@@ -18,7 +18,7 @@ public sealed class Healthbar
             hb.transform.SetParent(onScreen.transform);
             RectTransform _bTransform = hb.AddComponent(typeof(RectTransform)) as RectTransform;
             CanvasRenderer _bRender = hb.AddComponent(typeof(CanvasRenderer)) as CanvasRenderer;
-            _bTransform.localPosition = new Vector2(480, 500);
+            _bTransform.localPosition = new Vector2(0, 500);
             hbImage = hb.AddComponent(typeof(Image)) as Image;
             hbImage.sprite = Resources.Load<Sprite>("_healthbar");
             hb.transform.localScale = new Vector3(5f, 0.25f, 0.0f);

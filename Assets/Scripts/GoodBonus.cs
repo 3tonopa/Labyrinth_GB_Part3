@@ -33,7 +33,6 @@ namespace Labyrinth
                 _player._hp = 100;
                 Debug.Log("RESET HEALTH");
              }
-             else return;   
             _player._score += _points; 
         }
 

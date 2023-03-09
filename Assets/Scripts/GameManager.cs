@@ -59,15 +59,17 @@ namespace Labyrinth
                     exit.wonTheGame += _displayEndGame.YouWin;
                 }
             }
+            Buttons quit = new Buttons("Quit");
+            quit.gObj.GetComponent<Button>().onClick.AddListener(Quit);
             score = new ScoreInd(scoreFont);
             Buttons restart = new Buttons("Restart");
             restart.gObj.GetComponent<Button>().onClick.AddListener(Restart);
             Buttons pause = new Buttons("Pause");
             pause.gObj.GetComponent<Button>().onClick.AddListener(Pause);
-            Buttons save = new Buttons("Save");
-            save.gObj.GetComponent<Button>().onClick.AddListener(Save);
-            Buttons load = new Buttons("Load");
-            load.gObj.GetComponent<Button>().onClick.AddListener(Load);
+            // Buttons save = new Buttons("Save");
+            // save.gObj.GetComponent<Button>().onClick.AddListener(Save);
+            // Buttons load = new Buttons("Load");
+            // load.gObj.GetComponent<Button>().onClick.AddListener(Load);
 
 
             hBar = new Healthbar();
@@ -150,6 +152,10 @@ namespace Labyrinth
         void Load()
         {
             _go.LoadFile();
+        }
+        void Quit()
+        {
+            Application.Quit();
         }
 
         public void Dispose()

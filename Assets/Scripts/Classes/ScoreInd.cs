@@ -19,7 +19,7 @@ namespace Labyrinth
             CanvasRenderer cr = gObj.AddComponent(typeof(CanvasRenderer)) as CanvasRenderer;
 
             _text = gObj.AddComponent(typeof(Text)) as Text;
-            _bTransform.localPosition = new Vector2(840, 337);
+            _bTransform.localPosition = new Vector2(435, 500);
             _bTransform.sizeDelta = new Vector2(100, 100);
             _text.color = Color.yellow;
             _text.font = font;
